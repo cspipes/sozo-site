@@ -1,0 +1,12 @@
+{
+  "name": "sozo-site",
+  "private": true,
+  "description": "sozoware.com – the Sozo marketing site",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.3"
+  }
+}
