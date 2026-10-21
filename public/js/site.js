@@ -43,6 +43,17 @@
     window.addEventListener('load', function () { goTo(initial, false); });
   }
 
+  // ---------- demos play while they're on screen ----------
+  var demos = document.querySelectorAll('.hoverplay');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('inview', e.isIntersecting); });
+    }, { threshold: 0.3 });
+    demos.forEach(function (el) { io.observe(el); });
+  } else {
+    demos.forEach(function (el) { el.classList.add('inview'); });
+  }
+
   // ---------- rotating headline word ----------
   var word = document.querySelector('.word[data-words]');
   if (word && !reduceMotion) {
