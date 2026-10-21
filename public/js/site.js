@@ -20,6 +20,29 @@
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // ---------- in-page links: smooth scroll, keep the address clean (no #section) ----------
+  function goTo(id, smooth) {
+    var el = id && document.getElementById(id);
+    if (!el) return false;
+    el.scrollIntoView({ behavior: smooth && !reduceMotion ? 'smooth' : 'auto', block: 'start' });
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    return true;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"], a[href^="/#"]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var href = a.getAttribute('href');
+    if (href.charAt(0) === '/' && location.pathname !== '/') return; // a link home from another page
+    if (goTo(href.split('#')[1], true)) e.preventDefault();
+  });
+  // Arriving from another page with /#pilot: jump there, then tidy the address.
+  if (location.hash) {
+    var initial = location.hash.slice(1);
+    window.addEventListener('load', function () { goTo(initial, false); });
+  }
+
   // ---------- rotating headline word ----------
   var word = document.querySelector('.word[data-words]');
   if (word && !reduceMotion) {
