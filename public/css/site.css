@@ -686,3 +686,19 @@ html { -webkit-text-size-adjust: 100%; }
   .workflow-copy > .lede { display: none; }
   .built .lede { font-size: 17px; }
 }
+
+/* features: the subtitle sits under its headline instead of floating at the far right */
+.features-head { display: block; }
+.features-head .lede { max-width: 680px; margin-top: 18px; font-size: 19px; }
+
+/* steps: text starts and ends on the same lines across the three cards */
+.step { display: flex; flex-direction: column; }
+.step h3 { min-height: 1.2em; }
+
+/* phones: headlines a size down so none runs five lines */
+@media (max-width: 640px) {
+  .h2, .pilot-copy .h2 { font-size: 32px; line-height: 1.06; letter-spacing: -0.01em; }
+  .built-body .h2 { font-size: 30px; }
+  .features-head .lede { font-size: 17px; margin-top: 14px; }
+  .step { display: grid; }
+}
