@@ -54,6 +54,38 @@
     demos.forEach(function (el) { el.classList.add('inview'); });
   }
 
+  // ---------- section timeline rail ----------
+  var rail = document.querySelector('.rail');
+  if (rail) {
+    var links = Array.prototype.slice.call(rail.querySelectorAll('a[data-sec]'));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('data-sec')); });
+    var hero = document.getElementById('top');
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var mid = window.innerHeight * 0.45;
+      var y = window.scrollY;
+      rail.classList.toggle('show', hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.4 : y > 400);
+      var active = -1;
+      targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= mid) active = i; });
+      links.forEach(function (a, i) {
+        a.classList.toggle('active', i === active);
+        a.classList.toggle('passed', i < active);
+        if (i === active) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+      var first = targets[0], last = targets[targets.length - 1];
+      if (first && last) {
+        var start = first.getBoundingClientRect().top + y - mid;
+        var end = last.getBoundingClientRect().top + y - mid;
+        var p = Math.max(0, Math.min(1, (y - start) / Math.max(1, end - start)));
+        rail.querySelector('ol').style.setProperty('--p', p.toFixed(3));
+      }
+    };
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   // ---------- security card: the stored value keeps re-encrypting while on screen ----------
   var cipher = document.querySelector('.cipher');
   if (cipher && !reduceMotion) {

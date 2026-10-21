@@ -612,3 +612,33 @@ html { -webkit-text-size-adjust: 100%; }
   .vault-log { font-size: 11.5px; }
   .pillars-6 { grid-template-columns: 1fr; margin-top: 36px; }
 }
+
+/* values, inside the Why Sozo section */
+.story-body { max-width: 1120px; }
+.story-body .lede { max-width: 700px; }
+.beliefs-label { margin: 56px 0 18px; }
+.beliefs { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; text-align: left; }
+.belief { position: relative; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 22px 22px 24px; overflow: hidden; transition: background .3s, transform .3s; }
+.belief::before { content: ""; position: absolute; left: 22px; right: 22px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--accent); }
+.belief:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
+.belief h3 { font-weight: 900; font-size: 20px; color: var(--accent); margin: 6px 0 8px; }
+.belief p { font-size: 15px; line-height: 1.55; color: var(--on-dark); }
+@media (max-width: 640px) { .beliefs-label { margin-top: 40px; } }
+
+/* ---------- section timeline rail (wide screens) ---------- */
+.rail { display: none; }
+@media (min-width: 1360px) {
+  .rail { display: block; position: fixed; left: 22px; top: 50%; z-index: 50; transform: translate(-14px, -50%); opacity: 0; pointer-events: none; transition: opacity .35s, transform .35s; }
+  .rail.show { opacity: 1; transform: translate(0, -50%); pointer-events: auto; }
+  .rail ol { position: relative; list-style: none; margin: 0; padding: 16px 11px; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,.78); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid rgba(37,32,96,.08); border-radius: 999px; box-shadow: 0 10px 30px rgba(27,23,73,.14); }
+  .rail ol::before, .rail ol::after { content: ""; position: absolute; left: 50%; top: 22px; width: 2px; margin-left: -1px; border-radius: 2px; }
+  .rail ol::before { bottom: 22px; background: rgba(37,32,96,.14); }
+  .rail ol::after { height: calc((100% - 44px) * var(--p, 0)); background: var(--cyan); transition: height .15s linear; }
+  .rail a { position: relative; z-index: 1; display: flex; align-items: center; width: 14px; height: 14px; text-decoration: none; }
+  .rail-dot { width: 12px; height: 12px; margin: 1px; border-radius: 999px; background: #fff; border: 2px solid rgba(37,32,96,.35); transition: background .25s, border-color .25s, transform .25s; }
+  .rail a.passed .rail-dot { background: var(--navy); border-color: var(--navy); }
+  .rail a.active .rail-dot { background: var(--cyan); border-color: var(--cyan); transform: scale(1.35); box-shadow: 0 0 0 4px rgba(35,174,224,.2); }
+  .rail-label { position: absolute; left: 30px; top: 50%; transform: translate(-6px, -50%); white-space: nowrap; background: var(--navy-deep); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; box-shadow: 0 8px 18px rgba(27,23,73,.25); }
+  .rail a:hover .rail-label, .rail a:focus-visible .rail-label { opacity: 1; transform: translate(0, -50%); }
+  .rail a:hover .rail-dot { border-color: var(--cyan); }
+}
