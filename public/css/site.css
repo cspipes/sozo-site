@@ -160,9 +160,9 @@ button, input, select { font: inherit; }
 .built-body { padding-top: 96px; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .built-body .h2 { max-width: 900px; }
 .built-body .lede { margin-top: 22px; max-width: 760px; }
-.built-marks { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.built-marks li { display: inline-flex; align-items: center; gap: 10px; background: var(--mist); border-radius: 999px; padding: 8px 18px 8px 8px; font-weight: 700; font-size: 15px; color: var(--navy); }
-.built-icon { width: 34px; height: 34px; border-radius: 999px; background: var(--sky); display: flex; align-items: center; justify-content: center; flex: none; }
+.built-marks { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; }
+.built-marks li { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--caption); }
+.built-marks li::before, .tech-strip li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 999px; background: var(--cyan); margin: 0 10px 2px 0; vertical-align: middle; }
 
 /* ---------- your workflow ---------- */
 .workflow-section { padding-top: 96px; }
@@ -344,10 +344,53 @@ button, input, select { font: inherit; }
 .pillar h3 { margin: 18px 0 8px; font-weight: 800; font-size: 21px; color: var(--navy); }
 .pillar p { font-size: 16px; color: var(--body); }
 .security-lede { margin-top: 18px; max-width: 700px; }
-.pillars-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 44px; }
-.pillars-6 .pillar { background: var(--white); border: 1.5px solid #E3E9F2; border-radius: 24px; padding: 28px 26px; }
-.tech-strip { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.tech-strip li { font-size: 13px; font-weight: 700; letter-spacing: .02em; color: var(--navy); border: 1.5px solid #D9E0EE; border-radius: 999px; padding: 7px 14px; background: var(--white); }
+/* security panel */
+.sec-panel { border-radius: 36px; padding: clamp(32px, 5vw, 64px); }
+.sec-panel > * { position: relative; }
+.sec-panel > .fx { position: absolute; }
+.sec-top { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
+.sec-copy { flex: 1 1 440px; min-width: 0; }
+.sec-copy .lede { margin-top: 18px; max-width: 560px; }
+.sec-visual { flex: 1 1 360px; min-width: 0; display: flex; justify-content: center; }
+.vault { width: 100%; max-width: 420px; background: #FFFFFF; color: var(--ink); border-radius: 22px; padding: 20px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+.vault-head { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.vault-lock { width: 42px; height: 42px; border-radius: 12px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex: none; animation: lockGlow 6s ease-in-out infinite; }
+.vault-lock .shackle { animation: shackle 6s ease-in-out infinite; transform-origin: 16px 11px; }
+.vault-title { flex: 1; min-width: 0; }
+.vault-title span { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--caption); }
+.vault-title strong { font-family: var(--font-display); font-size: 17px; color: var(--navy); }
+.vault-pill { font-size: 12px; font-weight: 800; color: #1C6B45; background: #E3F6EC; padding: 5px 10px; border-radius: 999px; animation: pillPop 6s ease-out infinite; }
+.vault-rows { margin: 12px 0 0; display: flex; flex-direction: column; gap: 9px; font-size: 13px; }
+.vault-rows > div { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.vault-rows dt { color: var(--muted); }
+.vault-rows dd { margin: 0; font-weight: 700; text-align: right; }
+.vault-rows .cipher { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; color: #4F48B8; background: var(--lilac); padding: 3px 8px; border-radius: 6px; letter-spacing: .02em; }
+.wall-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #8A5A00; background: #FFF3D6; padding: 4px 9px; border-radius: 999px; }
+.vault-log { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 7px; font-size: 12px; color: var(--body); }
+.vault-log li { display: flex; align-items: center; gap: 8px; animation: logIn 6s ease-out infinite both; }
+.vault-log li:nth-child(1) { animation-delay: .4s; }
+.vault-log li:nth-child(2) { animation-delay: 1.2s; }
+.vault-log li:nth-child(3) { animation-delay: 2.2s; }
+.vault-log time { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+.log-dot { width: 8px; height: 8px; border-radius: 999px; flex: none; }
+.log-dot.ok { background: #2E9E66; }
+.log-dot.no { background: #E8603C; }
+@keyframes shackle { 0%, 12% { transform: translateY(-3px); } 20%, 100% { transform: none; } }
+@keyframes lockGlow { 0%, 16% { box-shadow: 0 0 0 0 rgba(35,174,224,0); } 22% { box-shadow: 0 0 0 8px rgba(35,174,224,.25); } 34%, 100% { box-shadow: 0 0 0 0 rgba(35,174,224,0); } }
+@keyframes pillPop { 0%, 18% { opacity: .35; transform: scale(.9); } 24% { opacity: 1; transform: scale(1.08); } 30%, 100% { opacity: 1; transform: none; } }
+@keyframes logIn { 0% { opacity: 0; transform: translateY(6px); } 8%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+
+.pillars-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 48px; }
+.pillars-6 .pillar { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 24px; transition: background .3s, transform .3s; }
+.pillars-6 .pillar:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
+.pillar-head { display: flex; align-items: center; gap: 14px; }
+.pillars-6 .icon-tile { width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.1); }
+.pillars-6 .icon-tile svg { width: 22px; height: 22px; }
+.pillars-6 h3 { margin: 0; font-size: 19px; color: var(--white); line-height: 1.25; }
+.pillars-6 p { margin-top: 12px; font-size: 15px; color: var(--on-dark); }
+.sec-panel .tech-strip li { color: var(--caption-dark); }
+.sec-panel .security-contact { color: var(--on-dark-2); }
+.sec-panel .security-contact a { color: var(--caption-dark); }
 .values-label { margin-top: 96px; margin-bottom: 20px; }
 .values { display: flex; flex-wrap: wrap; gap: 18px; }
 .value { flex: 1 1 250px; border-radius: 26px; padding: 30px; }
@@ -508,7 +551,7 @@ html { -webkit-text-size-adjust: 100%; }
   .steps, .bento { margin-top: 36px; gap: 16px; }
   .workflow-section { padding-top: 56px; }
   .built-body { padding-top: 64px; }
-  .built-marks li { font-size: 14px; }
+  .built-marks li { font-size: 12px; }
   .workflow { border-radius: 28px; padding: 32px 22px; gap: 36px; }
   .wf-steps li { padding: 11px 12px; font-size: 13px; }
   .step { padding: 28px 24px; }
@@ -549,3 +592,23 @@ html { -webkit-text-size-adjust: 100%; }
 /* security contact line */
 .security-contact { margin-top: 18px; font-size: 15px; color: var(--muted); }
 .security-contact a { font-weight: 700; }
+
+/* plain dotted text line for the security safeguards */
+.tech-strip { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 0; }
+.tech-strip li { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--caption); }
+.sec-panel .tech-strip li { color: var(--caption-dark); }
+
+.tech-strip { gap: 8px 26px; }
+.vault-rows dt { white-space: nowrap; }
+@media (max-width: 640px) {
+  .sec-panel { border-radius: 28px; padding: 32px 20px; }
+  .vault { padding: 16px; }
+  .vault-head { gap: 10px; }
+  .vault-lock { width: 36px; height: 36px; border-radius: 10px; }
+  .vault-title strong { font-size: 15px; }
+  .vault-pill { font-size: 11px; padding: 4px 8px; }
+  .vault-rows .cipher { font-size: 10.5px; padding: 3px 6px; }
+  .wall-badge { font-size: 11px; }
+  .vault-log { font-size: 11.5px; }
+  .pillars-6 { grid-template-columns: 1fr; margin-top: 36px; }
+}

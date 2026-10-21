@@ -54,6 +54,28 @@
     demos.forEach(function (el) { el.classList.add('inview'); });
   }
 
+  // ---------- security card: the stored value keeps re-encrypting while on screen ----------
+  var cipher = document.querySelector('.cipher');
+  if (cipher && !reduceMotion) {
+    var CH = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789+/';
+    var rnd = function () { return CH.charAt(Math.floor(Math.random() * CH.length)); };
+    var len = cipher.textContent.length;
+    var box = cipher.closest('.hoverplay');
+    setInterval(function () {
+      if (box && !box.classList.contains('inview') && !box.matches(':hover')) return;
+      var target = '';
+      for (var k = 0; k < len; k++) target += rnd();
+      var f = 0;
+      var tick = setInterval(function () {
+        f += 2;
+        var out = '';
+        for (var k = 0; k < len; k++) out += k < f ? target.charAt(k) : rnd();
+        cipher.textContent = out;
+        if (f >= len) clearInterval(tick);
+      }, 35);
+    }, 3000);
+  }
+
   // ---------- rotating headline word ----------
   var word = document.querySelector('.word[data-words]');
   if (word && !reduceMotion) {
