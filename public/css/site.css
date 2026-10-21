@@ -156,6 +156,33 @@ button, input, select { font: inherit; }
 .step h3 { margin: 22px 0 10px; font-weight: 800; font-size: 26px; color: var(--navy); }
 .step p { color: var(--body); }
 
+/* ---------- your workflow ---------- */
+.workflow-section { padding-top: 96px; }
+.workflow { background: var(--lilac); border-radius: 36px; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
+.workflow-copy { flex: 1 1 460px; min-width: 0; }
+.workflow-copy .h2 { color: #2A2470; }
+.workflow-copy .lede { margin-top: 20px; max-width: 560px; color: #44486A; }
+.workflow-points { list-style: none; margin: 26px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
+.workflow-points li { position: relative; padding-left: 30px; color: #44486A; }
+.workflow-points li::before { content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 999px; background: #6C6BD9; box-shadow: inset 0 0 0 4px #DCDAF7; }
+.workflow-points strong { color: var(--navy); }
+.workflow-note { margin-top: 22px; font-family: var(--font-display); font-weight: 800; color: #4F48B8; }
+.workflow-visual { flex: 1 1 380px; min-width: 0; position: relative; display: flex; flex-direction: column; align-items: center; }
+.wf-card { width: 100%; max-width: 420px; background: var(--white); border-radius: 22px; padding: 20px; box-shadow: 0 24px 50px rgba(63,58,158,.16); }
+.wf-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.wf-head strong { display: block; font-family: var(--font-display); font-size: 18px; color: var(--navy); }
+.wf-kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--caption); }
+.wf-edit { font-size: 13px; font-weight: 800; color: #4F48B8; background: var(--lilac); padding: 6px 12px; border-radius: 999px; }
+.wf-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.wf-steps li { display: flex; align-items: center; gap: 12px; background: var(--mist); border-radius: 12px; padding: 12px 14px; font-size: 14px; }
+.wf-grip { width: 10px; height: 14px; flex: none; background-image: radial-gradient(#A3A8C7 1.4px, transparent 1.6px); background-size: 5px 5px; }
+.wf-name { flex: 1; font-weight: 700; color: var(--ink); }
+.wf-days { font-size: 12px; font-weight: 700; color: #4F48B8; background: var(--white); border: 1px solid #DCDAF7; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.wf-steps li.wf-moving { background: var(--white); box-shadow: 0 10px 24px rgba(63,58,158,.18); transform: translateX(10px) rotate(-1deg); border: 1.5px solid #6C6BD9; }
+.wf-add { margin-top: 10px; padding: 10px 14px; border-radius: 12px; border: 1.5px dashed #C9C6F1; font-size: 13px; font-weight: 700; color: #6C6BD9; }
+.wf-chip { margin-top: -14px; align-self: flex-end; margin-right: 6%; position: relative; display: inline-flex; align-items: center; gap: 8px; background: var(--navy); color: var(--white); font-size: 13px; font-weight: 700; padding: 9px 14px; border-radius: 999px; box-shadow: 0 12px 24px rgba(37,32,96,.25); }
+.wf-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--cyan); }
+
 /* ---------- features ---------- */
 .features-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .features-head .lede { max-width: 360px; font-size: 17px; }
@@ -421,6 +448,10 @@ html { -webkit-text-size-adjust: 100%; }
   .hero-curve { height: 48px; }
   .section { padding-top: 72px; padding-bottom: 72px; }
   .steps, .bento { margin-top: 36px; gap: 16px; }
+  .workflow-section { padding-top: 64px; }
+  .workflow { border-radius: 28px; padding: 32px 22px; gap: 36px; }
+  .wf-steps li { padding: 11px 12px; font-size: 13px; }
+  .wf-steps li.wf-moving { transform: translateX(6px) rotate(-1deg); }
   .step { padding: 28px 24px; }
   .tile-wide, .tile-ask { padding: 28px 24px; }
   .card { padding: 26px 24px; }
