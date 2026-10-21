@@ -66,6 +66,12 @@
       var mid = window.innerHeight * 0.45;
       var y = window.scrollY;
       rail.classList.toggle('show', hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.4 : y > 400);
+      // match the line to what's behind it: light on navy sections, navy on light ones
+      links.forEach(function (a) {
+        var r = a.getBoundingClientRect();
+        var behind = document.elementsFromPoint(r.left + 4, r.top + r.height / 2).filter(function (n) { return !rail.contains(n); })[0];
+        a.classList.toggle('on-dark', !!(behind && behind.closest && behind.closest('.dark')));
+      });
       var active = -1;
       targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top <= mid) active = i; });
       links.forEach(function (a, i) {
