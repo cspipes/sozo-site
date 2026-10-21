@@ -361,7 +361,18 @@ button, input, select { font: inherit; }
 
 /* ---------- FAQ ---------- */
 .faq-section { padding-bottom: 24px; }
-.faq { margin-top: 40px; max-width: 860px; display: flex; flex-direction: column; gap: 12px; }
+.faq-layout { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; }
+.faq { flex: 1 1 560px; min-width: 0; max-width: 860px; display: flex; flex-direction: column; gap: 12px; }
+.faq-aside { flex: 1 1 300px; max-width: 380px; position: sticky; top: 32px; display: flex; flex-direction: column; align-items: center; }
+.faq-mascot { height: 140px; display: flex; align-items: flex-end; margin-bottom: -6px; position: relative; z-index: 1; }
+.faq-mascot svg { height: 100%; width: auto; }
+.ask-card { width: 100%; background: var(--navy-deep); color: var(--white); border-radius: 26px; padding: 28px 26px; position: relative; overflow: hidden; box-shadow: 0 24px 48px rgba(37,32,96,.18); }
+.ask-card::before { content: ""; position: absolute; width: 260px; height: 260px; right: -110px; top: -130px; border-radius: 999px; background: var(--cyan); opacity: .35; filter: blur(60px); }
+.ask-title { position: relative; font-family: var(--font-display); font-weight: 900; font-size: 28px; line-height: 1.1; }
+.ask-text { position: relative; margin-top: 10px; color: var(--on-dark); font-size: 16px; }
+.ask-btn { position: relative; margin-top: 20px; width: 100%; font-size: 15px; padding: 15px 18px; }
+.ask-link { position: relative; display: inline-block; margin-top: 14px; color: var(--caption-dark); font-weight: 700; font-size: 15px; text-decoration: none; }
+.ask-link:hover { color: var(--white); text-decoration: underline; }
 .faq-item { background: var(--mist); border-radius: 20px; padding: 0 24px; transition: background .2s; }
 .faq-item[open] { background: var(--sky); }
 .faq-item summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--navy); }
@@ -507,6 +518,8 @@ html { -webkit-text-size-adjust: 100%; }
   .sidekick-card { padding: 32px 22px 24px; }
   .thumb { width: 58px; height: 58px; }
   .pillars { gap: 32px; margin-top: 40px; }
+  .faq-aside { position: static; max-width: none; margin-top: 8px; }
+  .faq-layout { gap: 24px; }
   .values-label { margin-top: 64px; }
   .story-body { padding: 88px 20px 160px; }
   .waves { height: 120px; }
