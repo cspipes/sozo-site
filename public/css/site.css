@@ -363,7 +363,7 @@ button, input, select { font: inherit; }
 .faq-section { padding-bottom: 24px; }
 .faq-layout { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px; }
 .faq { flex: 1 1 560px; min-width: 0; max-width: 860px; display: flex; flex-direction: column; gap: 12px; }
-.faq-aside { flex: 1 1 300px; max-width: 380px; position: sticky; top: 32px; display: flex; flex-direction: column; align-items: center; }
+.faq-aside { flex: 1 1 300px; max-width: 380px; align-self: center; display: flex; flex-direction: column; align-items: center; }
 .faq-mascot { height: 140px; display: flex; align-items: flex-end; margin-bottom: -6px; position: relative; z-index: 1; }
 .faq-mascot svg { height: 100%; width: auto; }
 .ask-card { width: 100%; background: var(--navy-deep); color: var(--white); border-radius: 26px; padding: 28px 26px; position: relative; overflow: hidden; box-shadow: 0 24px 48px rgba(37,32,96,.18); }
