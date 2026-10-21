@@ -448,23 +448,42 @@
         <p class="eyebrow">Security</p>
         <h2 class="h2">Fun to use. Serious about security.</h2>
       </div>
-      <div class="pillars">
+      <p class="lede security-lede rv">Your clients trust you with their homes, their businesses and their health information. Sozo protects all of it with proven, industry-standard technology, built in from the first line of code.</p>
+      <div class="pillars pillars-6">
         <div class="pillar rv">
-          <div class="icon-tile" style="background:#EAF6FD"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7AA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>Security in the foundation</h3>
-          <p>Access by role, a record of who changed what, and encrypted connections were designed in from day one, not bolted on after the first security questionnaire.</p>
+          <div class="icon-tile" style="background:#EAF6FD"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7AA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg></div>
+          <h3>Encrypted everywhere</h3>
+          <p>TLS 1.2 or higher in transit and AES-256 at rest, the same standard banks rely on. Social Security numbers get a second, separate layer of encryption on top.</p>
         </div>
         <div class="pillar rv">
-          <div class="icon-tile" style="background:#EFEEFB"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4F48B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-          <h3>Walls where they matter</h3>
-          <p>Health information stays behind its own walls, visible only to the benefits team members who need it.</p>
+          <div class="icon-tile" style="background:#EFEEFB"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4F48B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.5 12a3.5 3.5 0 0 0 .5 7z"/></svg></div>
+          <h3>Built on Microsoft Azure</h3>
+          <p>The database and document storage sit behind private network endpoints, off the public internet. Keys and passwords live in Azure Key Vault, never in the code.</p>
+        </div>
+        <div class="pillar rv">
+          <div class="icon-tile" style="background:#E3F6EE"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="m15 16 2 2 4-4"/></svg></div>
+          <h3>Sign in with Microsoft 365</h3>
+          <p>Your team uses the accounts they already have, so your multi-factor authentication and sign-in policies come with them. No new passwords to manage.</p>
+        </div>
+        <div class="pillar rv">
+          <div class="icon-tile" style="background:#EAF6FD"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7AA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="M9 12h6"/></svg></div>
+          <h3>Walls the database enforces</h3>
+          <p>Access is role-based and closed by default. Health information is walled off inside the database itself, not just hidden on a screen, and it never leaves in a plain email.</p>
+        </div>
+        <div class="pillar rv">
+          <div class="icon-tile" style="background:#EFEEFB"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4F48B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6"/><path d="M8 4h8a2 2 0 0 1 2 2v14H6V6a2 2 0 0 1 2-2z"/><path d="M9 10h6"/><path d="M9 14h6"/><path d="M9 18h3"/></svg></div>
+          <h3>A record of everything</h3>
+          <p>Append-only audit logs show who opened health information, what changed, and what anyone asked the AI. Nothing can quietly rewrite history.</p>
         </div>
         <div class="pillar rv">
           <div class="icon-tile" style="background:#E3F6EE"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
-          <h3>Your agency, your own install</h3>
-          <p>Each agency runs on its own instance and its own database, never mixed in with anyone else's book.</p>
+          <h3>Your own install, backed up nightly</h3>
+          <p>Each agency runs on its own instance and its own database, never mixed with anyone else's book, with nightly backups and point-in-time restore.</p>
         </div>
       </div>
+      <ul class="tech-strip rv" aria-label="Technology Sozo is built on">
+        <li>AES-256</li><li>TLS 1.2+</li><li>Microsoft Azure</li><li>Microsoft Entra ID</li><li>Azure Key Vault</li><li>PostgreSQL row-level security</li>
+      </ul>
 
       <p class="eyebrow values-label rv">What we believe</p>
       <div class="values">
