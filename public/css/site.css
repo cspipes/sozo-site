@@ -702,3 +702,44 @@ html { -webkit-text-size-adjust: 100%; }
   .features-head .lede { font-size: 17px; margin-top: 14px; }
   .step { display: grid; }
 }
+
+/* ---------- compact rhythm: more on screen at once ---------- */
+.hero-body { padding-top: 40px; padding-bottom: 112px; }
+.hero-title { font-size: clamp(56px, 6.8vw, 92px); }
+.pilot-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pilot-form > :not(.field) { grid-column: 1 / -1; }
+.h2 { font-size: clamp(36px, 4.4vw, 52px); }
+.pilot-copy .h2 { font-size: clamp(36px, 4.4vw, 50px); }
+.section { padding-top: 72px; padding-bottom: 72px; }
+.faq-section { padding-bottom: 16px; }
+.steps, .bento { margin-top: 40px; }
+.built-body { padding-top: 64px; }
+.workflow-section { padding-top: 64px; }
+.workflow { padding-top: 48px; padding-bottom: 48px; }
+.data-body { padding-top: 84px; padding-bottom: 84px; }
+.sidekick-body { padding-top: 80px; padding-bottom: 80px; }
+.story-body { padding-top: 88px; padding-bottom: 170px; }
+.beliefs-label { margin-top: 40px; }
+.pillars-6 { margin-top: 36px; }
+.pilot-section { padding-top: 56px; padding-bottom: 80px; }
+.pilot { padding: clamp(32px, 4vw, 48px); }
+@media (max-width: 640px) {
+  .h2, .pilot-copy .h2 { font-size: 32px; }
+  .built-body .h2 { font-size: 30px; }
+  .section { padding-top: 56px; padding-bottom: 56px; }
+  .faq-section { padding-bottom: 8px; }
+  .steps, .bento { margin-top: 28px; }
+  .built-body { padding-top: 52px; }
+  .workflow-section { padding-top: 44px; }
+  .workflow { padding: 28px 20px; }
+  .data-body { padding-top: 60px; padding-bottom: 60px; }
+  .story-body { padding: 64px 20px 130px; }
+  .pillars-6 { margin-top: 28px; }
+  .pilot-section { padding-top: 36px; padding-bottom: 56px; }
+  .pilot { padding: 30px 20px 12px; }
+  .pilot-form { grid-template-columns: 1fr; }
+  .hero-body { padding-top: 28px; padding-bottom: 88px; }
+  .hero-title { font-size: clamp(52px, 15vw, 72px); }
+}
+.pilot-form .field { min-width: 0; }
+.pilot-form input, .pilot-form select { width: 100%; min-width: 0; box-sizing: border-box; }
