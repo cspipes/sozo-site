@@ -629,7 +629,7 @@ html { -webkit-text-size-adjust: 100%; }
 .rail { display: none; }
 @media (min-width: 1360px) {
   .rail { --rail: rgba(37,32,96,.28); --rail-strong: #252060; --rail-text: #4B5B92; --halo: rgba(255,255,255,.9);
-    display: block; position: fixed; left: 30px; top: 20vh; height: 60vh; z-index: 50; opacity: 0; pointer-events: none; transition: opacity .4s; }
+    display: block; position: fixed; left: 6px; top: 20vh; height: 60vh; padding: 0 44px 0 24px; z-index: 50; opacity: 0; pointer-events: none; transition: opacity .4s; }
   .rail a.on-dark { --rail: rgba(255,255,255,.32); --rail-strong: #FFFFFF; --rail-text: #C9D2F0; --halo: rgba(27,23,73,.9); }
   .rail.show { opacity: .38; pointer-events: auto; }
   .rail.show:hover, .rail.show:focus-within { opacity: 1; }
@@ -639,6 +639,7 @@ html { -webkit-text-size-adjust: 100%; }
   .rail ol::before { bottom: 4px; background: rgba(120,130,170,.38); }
   .rail ol::after { height: calc((100% - 8px) * var(--p, 0)); background: var(--cyan); width: 1.5px; margin-left: -.25px; transition: height .15s linear; }
   .rail a { position: relative; z-index: 1; display: flex; align-items: center; height: 9px; text-decoration: none; }
+  .rail a::before { content: ""; position: absolute; top: -12px; bottom: -12px; left: -24px; right: -60px; }
   .rail-dot { width: 7px; height: 7px; margin: 1px; border-radius: 999px; background: var(--halo); border: 1.5px solid var(--rail); box-sizing: border-box; transition: background .3s, border-color .3s, transform .25s cubic-bezier(.3,1.6,.5,1); }
   .rail:hover .rail-dot { transform: scale(1.25); }
   .rail a.passed .rail-dot { background: var(--rail-strong); border-color: var(--rail-strong); opacity: .55; }
