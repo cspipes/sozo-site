@@ -545,3 +545,7 @@ html { -webkit-text-size-adjust: 100%; }
   .btn-sm { padding: 9px 14px; }
   .hero-title { font-size: 48px; }
 }
+
+/* security contact line */
+.security-contact { margin-top: 18px; font-size: 15px; color: var(--muted); }
+.security-contact a { font-weight: 700; }
