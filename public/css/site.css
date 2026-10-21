@@ -111,7 +111,6 @@ button, input, select { font: inherit; }
 .hero-title .word { display: inline-block; color: var(--cyan); }
 .hero-sub { margin-top: 28px; font-size: 21px; line-height: 1.55; color: var(--on-dark); max-width: 520px; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-.hero-dog-m { display: none; }
 .hero-curve { position: absolute; left: 0; bottom: -1px; width: 100%; height: 90px; }
 
 .stage-col { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; }
@@ -542,7 +541,6 @@ html { -webkit-text-size-adjust: 100%; }
   .hero-ctas { flex-wrap: nowrap; align-items: flex-end; margin-top: 26px; }
   .hero-ctas .btn-ghost { display: none; }
   .hero-ctas .btn-primary { flex: 1 1 auto; padding-left: 20px; padding-right: 20px; }
-  .hero-dog-m { display: block; height: 96px; width: auto; margin: 0 2px -4px 0; }
   .stage-dog { display: none; }
   .stage { padding: 16px; }
   .doc-slot { display: none; } /* keep the filled policy, the clearest part of the demo */
@@ -743,3 +741,15 @@ html { -webkit-text-size-adjust: 100%; }
 }
 .pilot-form .field { min-width: 0; }
 .pilot-form input, .pilot-form select { width: 100%; min-width: 0; box-sizing: border-box; }
+
+/* ---------- phone hero: headline fills the width, the dog sits on the card ---------- */
+@media (max-width: 640px) {
+  /* "renewals", the longest rotating word, is 4.2em wide: size the headline so it just fits */
+  .hero-title { font-size: min(calc((100vw - 2 * var(--gutter)) / 4.3), 92px); }
+  .hero-body { gap: 0; }
+  .hero-ctas { margin-top: 40px; }
+  .hero-ctas .btn-primary { flex: 0 0 auto; padding-left: 26px; padding-right: 26px; }
+  .btn-more { display: none; }
+  .stage-col { align-items: stretch; }
+  .stage-dog { display: block; align-self: flex-end; height: 144px; width: auto; margin: -97px 10px -5px 0; }
+}
