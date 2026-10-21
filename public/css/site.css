@@ -115,7 +115,7 @@ button, input, select { font: inherit; }
 .hero-curve { position: absolute; left: 0; bottom: -1px; width: 100%; height: 90px; }
 
 .stage-col { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; }
-.stage-dog { height: 150px; width: auto; margin: 0 36px -4px 0; position: relative; z-index: 1; animation: breathe 4s ease-in-out infinite; }
+.stage-dog { height: 150px; width: auto; margin: 0 36px -4px 0; position: relative; z-index: 1; }
 .stage { width: 100%; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-lg); padding: 22px; box-shadow: 0 40px 80px rgba(8,6,32,.4); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
 .stage-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; font-size: 13px; color: var(--on-dark-2); }
 .stage-live { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; color: var(--caption-dark); letter-spacing: .12em; text-transform: uppercase; }
@@ -441,7 +441,7 @@ html { -webkit-text-size-adjust: 100%; }
   .hero-ctas { flex-wrap: nowrap; align-items: flex-end; margin-top: 26px; }
   .hero-ctas .btn-ghost { display: none; }
   .hero-ctas .btn-primary { flex: 1 1 auto; padding-left: 20px; padding-right: 20px; }
-  .hero-dog-m { display: block; height: 96px; width: auto; margin: 0 2px -4px 0; animation: breathe 4s ease-in-out infinite; }
+  .hero-dog-m { display: block; height: 96px; width: auto; margin: 0 2px -4px 0; }
   .stage-dog { display: none; }
   .stage { padding: 16px; }
   .doc-slot { display: none; } /* keep the filled policy, the clearest part of the demo */
