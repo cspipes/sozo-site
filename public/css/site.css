@@ -678,6 +678,11 @@ html { -webkit-text-size-adjust: 100%; }
 
   /* desktop extras that make the phone page long */
   .sidekick-wrap, .faq-aside { display: none; }
+
+  /* pilot: the card runs nearly edge to edge and the form gets the width */
+  .pilot-section { padding-left: 12px; padding-right: 12px; }
+  .pilot { padding: 34px 20px 12px; gap: 28px; }
+  .pilot-form { margin: 0 -8px; padding: 22px 18px; }
   .workflow-copy > .lede { display: none; }
   .built .lede { font-size: 17px; }
 }
